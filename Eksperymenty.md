@@ -24,11 +24,17 @@
 
  * Wygenerowano wynik dla **ResNet101** z wykorzystaniem modelu z torchvision. W Weights&Biases jest to model *leafy-oath-19* i otrzymany wynik dla zbioru testowego to **...**.
  
+## 07.04.2022
+
+ * Wykonanie analizy błędów najlepszego modelu **ResNet50**. Wyniki znajdują się w /plots/ResNet50_4classes_07_05_2022
+ 
 # Eksperymenty do wykonania
 
+ * Wykorzystanie RMSLELoss do przy wysokich wartościach (nieskalowanych) parametrów gleby: P, K, Mg
+ * Skalowanie predykowanych wartości P, K, Mg
  * Wypróbowanie modeli z biblioteki timm (https://github.com/rwightman/pytorch-image-models) oraz modelu DeiT (https://github.com/facebookresearch/deit/blob/main/models.py). Biblioteka timm daje duże możliwości customizacji - warto przeczytać https://towardsdatascience.com/getting-started-with-pytorch-image-models-timm-a-practitioners-guide-4e77b4bf9055#9388 oraz  https://fastai.github.io/timmdocs/models#So-how-is-timm-able-to-load-these-weights? 
  * Wykonanie crop np. 5 metrów środkowych. Domyślamy się, że zazwyczaj w tym obszarze były wykonane pomiary terenowe. Dodatkowo, może to zmniejszyć ilośc danych do trenowania (?szum informacyjny?). Mozna to uzyskać z wykorzystaniem scipy.ndimage.center_of_mass na masce numpy.
- * Wykonanie analizy błędów najlepszego modelu **ResNet50**
+ * 
  
  
  
