@@ -40,6 +40,9 @@
  * Stworzono notebook do predykcji na danych testowych z modeli pojedynczych parametrów (08 i 09.05.2022): ``HyperView_Torch_PredictTest_1ParamModels_ResNets_10_05_2022.ipynb``
  * Uzyskany wynik: ``ResNet50_10052022_1ParamModels``: **0.94449**
  
+ ## 11.05.2022
+ * Problemy z overfitting na pojedynczym zestawie danych. Ile epok potrzebne jest by stwierdzić że model overfituje we właściwy sposób na pojedynczym batchu?
+ 
 # Eksperymenty do wykonania
 
  * Skalowanie predykowanych wartości P, K, Mg, pH. Przy liczeniu MSE (i logowaniu do W&B) wartości predykowane i rzeczywiste powinny mieć wartości po inwersji skalowania (do bazowych wartości). Pytania: Parametry skalowania powinny zostać obliczone na całym zbiorze treningowym czy tylko na danych treningowych po wydzieleniu zbioru trening/walidacja? (Jeżeli druga opcja to trzeba podzielić zbiór treningowy na trening/walidację) 
