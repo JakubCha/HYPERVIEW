@@ -41,12 +41,16 @@
  * Uzyskany wynik: ``ResNet50_10052022_1ParamModels``: **0.94449**
  
  ## 11.05.2022
+ * Wyznaczono wartości skalujące parametry predykowane P, K, Mg, pH. Zostały one zapisane przez pickle.dump w /train_data. Parametry skalowania wyznaczono na całym zbiorze treningowym. Pytania: Parametry skalowania powinny zostać obliczone na całym zbiorze treningowym czy tylko na danych treningowych po wydzieleniu zbioru trening/walidacja? (Jeżeli druga opcja to trzeba podzielić zbiór treningowy na trening/walidację) 
  * Problemy z overfitting na pojedynczym zestawie danych. Ile epok potrzebne jest by stwierdzić że model overfituje we właściwy sposób na pojedynczym batchu?
+ 
+ ## 12.05.2022
+ * Trening modelu **ResNet50** 1Param na wyskalowanych predykowanych paramretrach
  
 # Eksperymenty do wykonania
 
- * Skalowanie predykowanych wartości P, K, Mg, pH. Przy liczeniu MSE (i logowaniu do W&B) wartości predykowane i rzeczywiste powinny mieć wartości po inwersji skalowania (do bazowych wartości). Pytania: Parametry skalowania powinny zostać obliczone na całym zbiorze treningowym czy tylko na danych treningowych po wydzieleniu zbioru trening/walidacja? (Jeżeli druga opcja to trzeba podzielić zbiór treningowy na trening/walidację) 
- 
+ * Wytrenować model 4-parametrowy (4Param) dla parametrów wyskalowanych
+ * Wypróbowanie OneCycleLR https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.OneCycleLR.html
  * Wykorzystanie RMSLELoss do przy wysokich wartościach (nieskalowanych) parametrów gleby: P, K, Mg
  * Wypróbowanie modeli z biblioteki timm (https://github.com/rwightman/pytorch-image-models) oraz modelu DeiT (https://github.com/facebookresearch/deit/blob/main/models.py). Biblioteka timm daje duże możliwości customizacji - warto przeczytać https://towardsdatascience.com/getting-started-with-pytorch-image-models-timm-a-practitioners-guide-4e77b4bf9055#9388 oraz  https://fastai.github.io/timmdocs/models#So-how-is-timm-able-to-load-these-weights? 
  * Wykonanie crop np. 5 metrów środkowych. Domyślamy się, że zazwyczaj w tym obszarze były wykonane pomiary terenowe. Dodatkowo, może to zmniejszyć ilośc danych do trenowania (?szum informacyjny?). Mozna to uzyskać z wykorzystaniem scipy.ndimage.center_of_mass na masce numpy.
