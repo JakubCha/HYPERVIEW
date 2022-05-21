@@ -45,7 +45,25 @@
  * Problemy z overfitting na pojedynczym zestawie danych. Ile epok potrzebne jest by stwierdzić że model overfituje we właściwy sposób na pojedynczym batchu?
  
  ## 12.05.2022
- * Trening modelu **ResNet50** 1Param na wyskalowanych predykowanych paramretrach
+ * Trening modelu **ResNet50** 1Param na wyskalowanych predykowanych parametrach
+ 
+ ## 13-14.05.2022
+ * Exploratory analysis: Analiza dystrybucji parametrów względem siebie i względem wielkości obrazka (liczby niezerowych pikseli). Próba predykcji jednego parametru na podstawie pozostałych trzech z wykorzystaniem XGBoost.
+ * Predykcja na modelach wyuczonych na znormalizowanych (wyskalowanych) parametrach. Uzyskany wynik: *ResNet50_12052022_1ParamScaled*: **0.94276**.
+ 
+ ## 15.05.2022
+ * Stworzono notebook do treningu na danych z RandomCrop o rozmiarze 11x11: `HyperView_Torch_1Param_Clean_ParamsScaling_RandomCrop_ResNets_14_05_2022`. W celu minimalizacji liczby pikseli o zerowej informacji okno o rozmiarze 11x11 jest losowane do momentu otrzymania co najmniej 60 pikseli niezerowych.
+ * Wykonano predykcję na danych testowych z wykorzystaniem RandomCrop o rozmiarze 11x11. Wynik nosi nazwę *ResNet50_150520221*: **1.00906**
+ 
+ ## 16.05.2022 i 17.05.2022
+ * Stworzono notebook do treningu na modelu pretrenowanym na ImageNet: `HyperView_Torch_1Param_Clean_ParamsScaling_Pretrained_ResNets_16_05_2022`. Wytrenowano modele dla poszczególnych parametrów. 
+ * Trening wykonano w stosunku 1000:732. Można zwiększyść ilość danych treningowych.
+
+ ## 18.05.2022
+ * Wykonano predykcję na wytrenowanych modelach. Otrzymany wynik: *ResNet50_18052022*: **0.90309**.
+ 
+ ## 19.05.2022 i 20.05.2022
+ * Wytrenowano modele dla pojedynczych parametrów z wykorzystaniem modelu ResNet50 i AdaptiveLoss zgodnie z repo: https://github.com/jonbarron/robust_loss_pytorch Otrzymany wynik: *ResNet50_19_05_2022*: **0.94470**.
  
 # Eksperymenty do wykonania
 
