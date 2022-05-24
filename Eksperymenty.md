@@ -65,12 +65,18 @@
  ## 19.05.2022 i 20.05.2022
  * Wytrenowano modele dla pojedynczych parametrów z wykorzystaniem modelu ResNet50 i AdaptiveLoss zgodnie z repo: https://github.com/jonbarron/robust_loss_pytorch Otrzymany wynik: *ResNet50_19_05_2022*: **0.94470**.
  
+ ## 21.05.2022 i 22.05.2022
+ * Wytrenowano modele na podstawie artykułu Hang2020. Konieczne było dostosowanie modelu do danych oraz poprawa części odpowiadającej za *spatial_attention* Wynik: **0.88436**
+ 
+ ## 23.05.2022
+ * Modyfikacja modelu Hang2020. Podmieniono część konwolucyjną modelu na bloki ResNet18 (1,2,3 lub 4 bloki). Wymagało to sporej zmiany w całym modelu.
+ 
+ 
 # Eksperymenty do wykonania
 
+ * Wytrenować z Hang2020 wyłącznie część `spectral_network` na danych o różnym rozmiarze (bez paddingu do 300x300). Zadziała?
  * Wytrenować model 4-parametrowy (4Param) dla parametrów wyskalowanych
  * Wypróbowanie OneCycleLR https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.OneCycleLR.html
- * Wykorzystanie RMSLELoss do przy wysokich wartościach (nieskalowanych) parametrów gleby: P, K, Mg
- * Wypróbowanie modeli z biblioteki timm (https://github.com/rwightman/pytorch-image-models) oraz modelu DeiT (https://github.com/facebookresearch/deit/blob/main/models.py). Biblioteka timm daje duże możliwości customizacji - warto przeczytać https://towardsdatascience.com/getting-started-with-pytorch-image-models-timm-a-practitioners-guide-4e77b4bf9055#9388 oraz  https://fastai.github.io/timmdocs/models#So-how-is-timm-able-to-load-these-weights? 
  * Wykonanie crop np. 5 metrów środkowych. Domyślamy się, że zazwyczaj w tym obszarze były wykonane pomiary terenowe. Dodatkowo, może to zmniejszyć ilośc danych do trenowania (?szum informacyjny?). Mozna to uzyskać z wykorzystaniem scipy.ndimage.center_of_mass na masce numpy.
  * 
  
